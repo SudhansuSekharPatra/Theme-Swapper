@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	--background-color: #fff;
+	--btn-color: var(--background-color);
+	--accent-color: orangered;
+	--btn-background-color: var(--accent-color);
+	--transition-delay: 800ms;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--background-color);
+	transition: var(--transition-delay);
+	overflow: hidden;
+}
+
+body.dark {
+	--background-color: #333;
+	--accent-color: #d0d066;
+	background-color: var(--background-color);
+}
+
+.theme-swap-btn {
+	font-size: 2rem;
+	font-family: "Poppins", sans-serif;
+	color: var(--btn-color);
+	letter-spacing: 1px;
+	background-color: var(--btn-background-color);
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+	transition: var(--transition-delay);
+}
+
+.dark .theme-swap-btn {
+	color: var(--btn-color);
+	background-color: var(--btn-background-color);
+}
+
+.swapper-icon {
+	height: 40px;
+	width: 40px;
+	margin-right: 0.8rem;
+}
+
+.sun-moon-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 250vmin;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(0);
+	transition: var(--transition-delay);
+}
+
+.sun-moon-container.rotate {
+	transform: rotate(180deg);
+}
+
+.icon {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+}
+
+.sun-icon {
+	top: 5%;
+	color: var(--accent-color);
+	transition: var(--transition-delay);
+	opacity: 1;
+}
+
+.dark .sun-icon {
+	opacity: 0;
+}
+
+.moon-icon {
+	bottom: 5%;
+	color: var(--accent-color);
+	transform: rotate(180deg);
+	transition: var(--transition-delay);
+	opacity: 0;
+}
+
+.dark .moon-icon {
+	opacity: 1;
+}
